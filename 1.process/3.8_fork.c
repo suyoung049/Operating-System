@@ -12,10 +12,12 @@ int main()
         return;
     }
     else if (pid == 0) {// child process
+        //execlp() 안의 내용으로 프로세스 메모리 덮어 씌어짐
         execlp("/bin/ls", "ls", NULL);
+        printf("LINE J\n");
     }
     else {//parent process
-        wait(NULL);
+        wait(NULL); 
         printf("Child Complete");
     }
     return 0;
