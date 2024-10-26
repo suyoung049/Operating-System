@@ -12,12 +12,12 @@ int main() {
         printf("child : pid = %d\n", pid1);
     }
     else if (pid > 0) {
+        wait(NULL);
         pid1 = getpid();
         //pid는 자식 프로세스의 PID
-        printf("child : pid = %d\n", pid);
+        printf("parent : pid = %d\n", pid);
         // pid1은 부모 프로세스의 실제 PID 값
-        printf("child : pid = %d\n", pid1);
-        wait(NULL);
+        printf("parent : pid = %d\n", pid1);
     }
 
     return 0;
